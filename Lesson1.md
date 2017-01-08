@@ -49,6 +49,8 @@ class App extends Component {
   }
 }
 
+export default App;
+
 ```
 
 - Many good Patterns: Single Responsibility, DRY, abstraction of state
