@@ -7,6 +7,8 @@ Using good libraries is encourages where it makes sense. There are many of these
 - Shared knowledge, reusable skills
 
 
+- Compare code across libraries - [TodoMVC](http://todomvc.com/)
+
 In this course we will be using React by Facebook.
 
 

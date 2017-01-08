@@ -2,8 +2,15 @@ Homework
 ---
 
 
+
 Start weekly online student sessions wednesday 11th, rotating student leader every week, use (SMART) agenda.
 
+TodoMVC
+--
+- Checkout [TodoMVC](http://todomvc.com/)
+
+Use React
+--
 
 - Use [Create React App](https://github.com/facebookincubator/create-react-app)
 - Create an organisation component
