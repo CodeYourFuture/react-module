@@ -1,4 +1,1 @@
-React Module
----
-
-- [Lesson 1](Lesson1.md)
+This is Angela's App.
