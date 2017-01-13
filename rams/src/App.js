@@ -7,7 +7,7 @@ class App extends Component {
   renderClients = () => {
     let clientsList = [], i=0;
     for(i = 0; i < response.data.length; i ++) {
-      clientsList.push(<p className ="list">{response.data[i]}</p>);
+      clientsList.push(<p className="list">{response.data[i]}</p>);
     }
     return clientsList;
   }

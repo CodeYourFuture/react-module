@@ -20,7 +20,6 @@
 
 .list{
   font-family: sans-serif;
-  font-style: italic;
 }
 .list:nth-child(5n)
 {
