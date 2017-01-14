@@ -59,7 +59,7 @@ State
 ---
 Sometimes a component needs to react to data that doesn't come from a parent component. This is where the component's State comes in.
 
-Props are a Compenent's configuration, they are received from above and they don't change.
+Props are a Compenent's configuration, they are received from above and they don't usually change by the component itself.
 State starts with a default value (set in the constructor typically) then it gets changed (mutated) by events of the application (user interactions, form input, API calls etc..)
 
 
