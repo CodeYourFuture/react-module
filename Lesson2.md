@@ -98,7 +98,10 @@ export default App;
 
 Component Life Cycle
 ---
+![First Render](/images/firstrender.png "Life Cycle Methods on the first render of a component")
+
 Components have `life cycle` events which are methods that run code at particular times in the process. According to the time that the methods are called, some of them are prefixed with `will` and `did`.
+
 
 Mounting
 --
