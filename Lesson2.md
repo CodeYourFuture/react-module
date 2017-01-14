@@ -110,7 +110,7 @@ Mounting
 --
 These are called when a component is being mounted on the DOM such as:
 
-- Constructure()
+- Constructor()
 - componentWillMount()
 - render()
 - etc
