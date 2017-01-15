@@ -75,8 +75,8 @@ class App extends Component {
         website: null
     }
   }
-  // We use the Fat Arrow function in order to know the value of this
-  handleChange = (event) => {
+  
+  handleChange(event) {
     this.setState({value: event.target.value});
   }
   render() {
@@ -86,7 +86,7 @@ class App extends Component {
             name="Refugee Support Network"
             website={this.state.website}
         />
-        <input type="text" value={this.state.website} onChange={this.handleChange} />
+        <input type="text" value={this.state.website} onChange={this.handleChange.bind(this)} />
       </div>
     );
   }
