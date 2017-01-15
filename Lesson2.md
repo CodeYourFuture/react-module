@@ -54,6 +54,38 @@ export default Organisation;
 
 ```
 
+- [Props exercise](https://jsfiddle.net/kabaros/1h9taf1e/)
+
+
+JSX: Map Arrays to Components
+---
+When working with APIs we often have collections of things in `Arrays` which we want to map to components. This means we can loop through that data and display the customisable `dumb` component for each one.
+
+```jsx
+
+renderOrganisations() {
+    const orgData = this.state.orgData;
+    return orgData.map(function renderData(organisation) {
+        return (
+            <Organisation
+                name= {organisation.name}
+                borough={organisation.borough ? organisation.borough : 'None'}
+                website= {organisation.website}
+            />
+        )
+    });
+}
+class App extends Component {
+  render() {
+      return (
+        <div className="App">
+          {this.renderOrganisations()}
+        </div>
+      );
+  }
+}
+
+```
 
 State
 ---
@@ -75,7 +107,7 @@ class App extends Component {
         website: null
     }
   }
-  
+
   handleChange(event) {
     this.setState({value: event.target.value});
   }
@@ -95,6 +127,8 @@ class App extends Component {
 export default App;
 
 ```
+
+- [State Exercise](https://jsfiddle.net/kabaros/hLk531dj/)
 
 Component Life Cycle
 ---
@@ -166,35 +200,6 @@ componentDidMount() {
 
 Once the state is updated with the data, your component will re-render.
 
-JSX: Map Arrays to Components
----
-When working with APIs we often have collections of things in `Arrays` which we want to map to components. This means we can loop through that data and display the customisable `dumb` component for each one.
-
-```jsx
-
-renderOrganisations() {
-    const orgData = this.state.orgData;
-    return orgData.map(function renderData(organisation) {
-        return (
-            <Organisation
-                name= {organisation.name}
-                borough={organisation.borough ? organisation.borough : 'None'}
-                website= {organisation.website}
-            />
-        )
-    });
-}
-class App extends Component {
-  render() {
-      return (
-        <div className="App">
-          {this.renderOrganisations()}
-        </div>
-      );
-  }
-}
-
-```
 Routing
 ---
 React can be used as a `Single Page Application`, i.e. providing full experience of an application with many views within one page with several components.
