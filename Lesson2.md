@@ -64,7 +64,7 @@ When working with APIs we often have collections of things in `Arrays` which we 
 ```jsx
 
 renderOrganisations() {
-    const orgData = this.state.orgData;
+    const orgData = [{ name: 'Organisation 1', borough: 'Camden'}, {name: 'Organisation 2'}];
     return orgData.map(function renderData(organisation) {
         return (
             <Organisation
@@ -86,6 +86,8 @@ class App extends Component {
 }
 
 ```
+
+- [Mapping Exercise](https://codepen.io/kabaros/pen/BpLzzE?editors=0010#0)
 
 State
 ---
@@ -128,7 +130,7 @@ export default App;
 
 ```
 
-- [State Exercise](https://jsfiddle.net/kabaros/hLk531dj/)
+- [State Exercise](https://codepen.io/kabaros/pen/NdRNmm?editors=0010#0)
 
 Component Life Cycle
 ---
