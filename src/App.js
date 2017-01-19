@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
   renderServiceProviders = () => {
     if (!this.state.orgData)
-        return <p> No Data Returned</p>;
+        return <p> Data Not Displayed</p>;
     let serviceProviders = [];
     let organisationList = this.state.orgData.data;
     //loops through list
@@ -17,27 +17,27 @@ class App extends Component {
         //organisation component here!!
         //<Organisation/>
         <div>
-        <p className="list" key={i}>
-        Organisation: {organisationList[i].organisation}
+        <div className="list" key={i}>
+        <strong>Organisation: </strong>{organisationList[i].organisation}
         <br></br> 
-        Telephone: {organisationList[i].tel}
+        <strong>Telephone: </strong>{organisationList[i].tel ? organisationList[i].tel: 'Not Available'}
         <br></br> 
-        Website: {organisationList[i].website}
+        <strong>Website: </strong>{organisationList[i].website ? organisationList[i].website: 'Search Online'}
         <br></br>
-        Email: {organisationList[i]["email\r"]}
+        <strong>Email: </strong>{organisationList[i]["email\r"] ? organisationList[i]["email\r"]: 'Not Available'}
         <br></br>
-        Hours of Operation: {organisationList[i].day}
+        <strong>Hours of Operation: </strong>{organisationList[i].day ? organisationList[i].day: 'Contact Organisation Directly'}
         <br></br>
-        Services Provided: {organisationList[i].services}
+        <strong>Services Provided: </strong>{organisationList[i].services}
         <br></br>
-        Clients: {organisationList[i].clients}
+        <strong>Clients: </strong>{organisationList[i].clients}
         <br></br>
-        Areas Covered: {organisationList[i].area}
+        <strong>Areas Covered: </strong>{organisationList[i].area}
         <br></br>
-        Borough: {organisationList[i].borough}
+        <strong>Borough: </strong>{organisationList[i].borough}
         <br></br>
-        How we work: {organisationList[i].process}
-        </p>
+        <strong>How we work: </strong>{organisationList[i].process}
+        </div>
         </div>
         );
     };
