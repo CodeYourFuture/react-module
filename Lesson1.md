@@ -91,4 +91,4 @@ Some features and their ES5 compatible code can be found [here](http://es6-featu
 
 Homework
 ---
-- [Directory of services with components](HOMEWORK.md)
+- [Directory of services with components](Homework/Homework1.md)
