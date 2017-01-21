@@ -1,33 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-renderOrganisations() {
-	const orgData = this.state.orgData;
-	return orgData.map(function renderData(organisation) {
+
+
+class OrganisationList extends Component {
+  renderOrganisations= () => {
+    const orgData = this.state.orgData;
+      return orgData.map(function renderData(detailsOfServiceProvider) {
         return (
-            <Organisation
-                Org={organisation.organisation}
-                tel= {organisation.tel ? organisation.tel : 'Currently Unavailable'}
-                web={organisation.website}
-                email={organisation["email\r"] ? organisation["email\r"] : 'Currently Unavailable'}
-                hours={organisation.day}
-                services={organisation.services}
-                clients={organisation.clients}
-                areas={organisation.area}
-                borough={organisation.borough ? organisation.borough : 'Not Applicable'}
-                operation={organisation.process}
+            <Details
+                Org={detailsOfServiceProviders.organisation}
+                tel= {detailsOfServiceProviders.tel ? detailsOfServiceProviders.tel : 'Currently Unavailable'}
+                web={detailsOfServiceProviders.website}
+                email={detailsOfServiceProviders["email\r"] ? detailsOfServiceProviders["email\r"] : 'Currently Unavailable'}
+                hours={detailsOfServiceProviders.day}
+                services={detailsOfServiceProviders.services}
+                clients={detailsOfServiceProviders.clients}
+                areas={detailsOfServiceProviders.area}
+                borough={detailsOfServiceProviders.borough ? detailsOfServiceProviders.borough : 'Not Applicable'}
+                operation={detailsOfServiceProviders.process}
             />
         )
     });
+  render() 
+  return (
+    <div className="App">
+      {this.renderOrganisations()}
+    </div>
+  );
 }
 
-render() {
-      return (
-        <div className="App">
-          {this.renderOrganisations()}
-        </div>
-      );
-  }
 }
-export=<Organisation/>;
+
+
+
+export default Organisation;

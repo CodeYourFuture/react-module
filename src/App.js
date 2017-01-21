@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import Organisation from'./OrganisationComp';
+import OrganisationList from'./OrganisationComp';
 
 
 
@@ -9,37 +9,37 @@ class App extends Component {
   renderServiceProviders = () => {
     if (!this.state.orgData)
         return <p> Data Not Displayed</p>;
-    let serviceProviders = [];
-    let organisationList = this.state.orgData.data;
+    let serviceProviders=[];
+    let organisationList=this.state.orgData.data;
     //loops through list
     for(let i = 0; i < organisationList.length; i++) {
       serviceProviders.push(
         //organisation component here!!
-        //<Organisation/>
         <div>
-        <div className="list" key={i}>
-        <strong>Organisation: </strong>{organisationList[i].organisation}
-        <br></br> 
-        <strong>Telephone: </strong>{organisationList[i].tel ? organisationList[i].tel: 'Not Available'}
-        <br></br> 
-        <strong>Website: </strong>{organisationList[i].website ? organisationList[i].website: 'Search Online'}
-        <br></br>
-        <strong>Email: </strong>{organisationList[i]["email\r"] ? organisationList[i]["email\r"]: 'Not Available'}
-        <br></br>
-        <strong>Hours of Operation: </strong>{organisationList[i].day ? organisationList[i].day: 'Contact Organisation Directly'}
-        <br></br>
-        <strong>Services Provided: </strong>{organisationList[i].services}
-        <br></br>
-        <strong>Clients: </strong>{organisationList[i].clients}
-        <br></br>
-        <strong>Areas Covered: </strong>{organisationList[i].area}
-        <br></br>
-        <strong>Borough: </strong>{organisationList[i].borough}
-        <br></br>
-        <strong>How we work: </strong>{organisationList[i].process}
+        {Details}
+          <div className="list" key={i}>
+            <strong>Organisation: </strong>{organisationList[i].organisation}
+            <br></br> 
+            <strong>Telephone: </strong>{organisationList[i].tel ? organisationList[i].tel: 'Not Available'}
+            <br></br> 
+            <strong>Website: </strong>{organisationList[i].website ? organisationList[i].website: 'Search Online'}
+            <br></br>
+            <strong>Email: </strong>{organisationList[i]["email\r"] ? organisationList[i]["email\r"]: 'Not Available'}
+            <br></br>
+            <strong>Hours of Operation: </strong>{organisationList[i].day ? organisationList[i].day: 'Contact Organisation Directly'}
+            <br></br>
+            <strong>Services Provided: </strong>{organisationList[i].services}
+            <br></br>
+            <strong>Clients: </strong>{organisationList[i].clients}
+            <br></br>
+            <strong>Areas Covered: </strong>{organisationList[i].area}
+            <br></br>
+            <strong>Borough: </strong>{organisationList[i].borough}
+            <br></br>
+            <strong>How we work: </strong>{organisationList[i].process}
+          </div>
         </div>
-        </div>
-        );
+      );
     };
     return serviceProviders;
   }
