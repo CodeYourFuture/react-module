@@ -16,7 +16,7 @@ class App extends Component {
       serviceProviders.push(
         //organisation component here!!
         <div>
-        {Details}
+        //{Details}
           <div className="list" key={i}>
             <strong>Organisation: </strong>{organisationList[i].organisation}
             <br></br> 
