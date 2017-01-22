@@ -1,0 +1,59 @@
+.App {
+	text-align: center;
+}
+
+.App-header {
+	background-color: #cce6ff;
+	height: 100px;
+	padding: 1px 20px 20px 20px;
+	color: #00004d;
+	font-family: 'Kavoon', verdana;
+	font-size: 2em;
+}
+
+.App-intro {
+	font-size: large;
+}
+
+.infoBtn {
+	width: 100px;
+	height: 30px;
+	margin: 10px;
+	background-color: #cce6ff;
+}
+
+#buttons {
+	margin: auto;
+	text-align: center;
+	width: 80%;
+}
+
+.btn {
+	color: #00004d;
+	float: left;
+	/*display: inline-block;*/
+	/*width: 100%;*/
+	box-sizing: border-box;
+	word-wrap: break-word;
+	width: 214px;
+	height: 214px;
+	/*text-overflow: hidden;
+	overflow: hidden;*/
+	text-align: center;
+	font-size: 1.3em;
+	border-radius: 10px;
+	background-color: #cce6ff;
+	/*padding: 0.4em;*/
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.clear {
+	clear: both;
+}
+
+.btn:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	cursor: pointer;
+	transition-duration: 0.5s;
+	border-color: #00004d; 
+}
