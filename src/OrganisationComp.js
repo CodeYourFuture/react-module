@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
+import Details from './Details'
 
 
 
 class OrganisationList extends Component {
-  renderOrganisation= () => {
-    const orgData=this.state.orgData;
-      return orgData.map(function renderData(detailsOfServiceProviders) {
+  renderOrganisations= () => {
+    const orgData=this.props.orgData;
+    //loops through list
+      return orgData.map(function renderData(detailsOfServiceProviders, index) {
         return (
-            <Details
-                Org={detailsOfServiceProviders.organisation}
+            <Details key={index}
+                name={detailsOfServiceProviders.organisation}
                 tel={detailsOfServiceProviders.tel ? detailsOfServiceProviders.tel : 'Currently Unavailable'}
                 web={detailsOfServiceProviders.website}
                 email={detailsOfServiceProviders["email\r"] ? detailsOfServiceProviders["email\r"] : 'Currently Unavailable'}
@@ -22,13 +24,14 @@ class OrganisationList extends Component {
             />
         )
     });
-  render() 
-  return (
+  }
+  render() {
+    return (
     <div className="App">
       {this.renderOrganisations()}
-    </div>
-  );
-}
+    </div> );
+  }
+ 
 
 }
 

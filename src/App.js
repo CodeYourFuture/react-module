@@ -9,20 +9,15 @@ class App extends Component {
   renderServiceProviders = () => {
     if (!this.state.orgData)
       //return error message if connection is not made
-        return <p> Data Not Displayed</p>;
-    let serviceProviders=[];
-    let organisationList=this.state.orgData.data;
-    //loops through list
-    for(let i = 0; i < organisationList.length; i++) {
-      serviceProviders.push(
-        //organisation component here!!
-        <div>
-          <OrganisationList list={Details}/>
-        </div>
-      );
-    };
-    return serviceProviders;
-  }
+      return <p> Data Not Displayed</p>;
+        let organisationList=this.state.orgData.data;
+    //returns the data in Organisationomp
+        return (
+          <div>
+            <OrganisationList orgData={organisationList}/>
+          </div> 
+        );
+    }
   //set intial state of your component
   constructor(props) {
     super(props);
@@ -53,8 +48,6 @@ class App extends Component {
     .then((jsonData)=> {
       this.setState({ orgData: jsonData });
     });
-  
-  this.callAPI.bind(this);
   }
 
   componentDidMount() {
