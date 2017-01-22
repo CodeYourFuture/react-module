@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import response from './organization.json';
 
-class Organization extends React.Component {
+class Organization extends Component {
 	render() {
 		// const name = this.props.name;
 		return(
