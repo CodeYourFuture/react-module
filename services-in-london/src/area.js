@@ -1,16 +1,35 @@
 import React, { Component } from 'react';
-import response from './area.json';
 
 class Area extends Component {
+	
+	render() {
+		const data=this.props.dataInfo.data;
+		return(
+			<div>
+				<h2>List of Areas</h2>
+					<div id="buttons">
+					{
+						data.map( (area, index) => {return (<button key={index} className="btn" onClick={() => this.areas(area)}>{area}</button>);})
+					}
+					</div>
+				<div className="clear"></div>
+			</div>
+		)
+	}
+}
+
+export default Area;
+
+/*class Area extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {organisations: []};
 	}
-areas = (area) => {
-	//call api
-	console.log(area)
-	this.setState({organisations: ['amit']})
-}
+	areas = (area) => {
+		//call api
+		console.log(area)
+		this.setState({organisations: ['amit']})
+	}
 
 	render() {
 		if (this.state.organisations.length == 1) {
@@ -31,4 +50,4 @@ areas = (area) => {
 	}
 }
 
-export default Area;
+export default Area;*/
