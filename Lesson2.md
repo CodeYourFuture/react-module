@@ -111,7 +111,7 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({website: event.target.value});
   }
   render() {
     return (
