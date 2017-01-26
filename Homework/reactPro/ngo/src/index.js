@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Contaner from './components/Contaner';
+import MainContainer from './components/MainContainer';
 
 ReactDOM.render(
-  <Contaner/>,
+  <MainContainer/>,
   document.getElementById('root')
 );

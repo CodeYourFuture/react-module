@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
-import './public/App.css';
+import '../App.css';
 
 
-class Contaner extends React.Component {
+class MainContainer extends React.Component {
   
   state={
     test: 34,
@@ -28,4 +28,4 @@ class Contaner extends React.Component {
     );
   }
 }
-export default Contaner;
+export default MainContainer;

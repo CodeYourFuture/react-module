@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from './public/logo.svg';
-import './public/App.css';
+import logo from '../logo.svg';
+import '../App.css';
 
 const Header=({message})=>{
   return(
