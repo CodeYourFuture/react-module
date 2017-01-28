@@ -57,3 +57,18 @@
 	transition-duration: 0.5s;
 	border-color: #00004d; 
 }
+.info {
+	margin: 25px auto;
+	border: 2px solid #005cb3;
+	background-color: #cce6ff;
+	border-radius: 25px;
+	width: 60%;
+	padding: 25px;
+	font-size: 1.8em;
+	color: #000033;
+	word-wrap: break-word;
+	text-align: left;
+	/*text-overflow: string;*/
+	/*white-space: normal;*/
+	/*overflow: hidden;*/
+}

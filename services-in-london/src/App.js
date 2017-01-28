@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Area from './area';
-import Type from './type';
+import OrgType from './orgtype';
 import Clients from './clients';
+import Details from './details';
 
 class App extends Component {
 	constructor(props) {
@@ -13,39 +14,61 @@ class App extends Component {
 				callData: null,
 		}
 	}
+	clients = (clients) => {
+		let clicked = 'details';
+		let clientsData = 'clients/' + clients;
+		//call api
+		this.callAPI(clientsData,clicked);
+	}
+	orgtype = (type) => {
+		let clicked = 'details';
+		let typeData = 'type/' + type;
+		this.callAPI(typeData,clicked);
+	}
+	areas = (area) => {
+		let clicked = 'details';
+		let areaData = 'area/' + area;
+		this.callAPI(areaData,clicked);
+	}
 	servicesBy = (info) =>{
-		this.setState({clickedValue: info});
-		this.componentDidMount(info);
+		this.callAPI(info,info);
 	}
 	displayRender = () => {
+		const data = this.state.callData.data;
 		switch (this.state.clickedValue) {
-			case 'clients': return (<Clients dataInfo={this.state.callData} />);
+			case 'clients': return (<Clients dataInfo={this.state.callData} whenClick={this.clients} />);
 			break;
-			case 'type': return (<Type dataInfo={this.state.callData} />);
-			case 'area': return (<Area dataInfo={this.state.callData} />);
+			case 'type': return (<OrgType dataInfo={this.state.callData} whenClick={this.orgtype} />);
+			case 'area': return (<Area dataInfo={this.state.callData} whenClick={this.areas} />);
+			case 'details': {
+				return data.map((data, index) => {return (
+					<Details 
+					key={index}
+					website={data.website}
+					email={data['email\r']}
+					tel={data.tel}
+					area={data.area}
+					process={data.process}
+					clients={data.clients}
+					services={data.services}
+					borough={data.borough}
+					type={data.type}
+					day={data.day}
+					organisation={data.organisation}/>);})
+			}
 			default:
 			break;
 		}
-		/*let test = '';
-		for (var key in this.state.data.data) {
-			for (var j in this.state.data.data[key]) {
-				test += this.state.data.data[key][j]
-			}
-		}
-		return <div>{test}</div>;*/
 	}
-	callAPI = (url) => {
+	callAPI = (url,clicked) => {
 		const APIAddress = 'https://code-your-future.github.io/api-demo/' + url + '/index.json';
 		fetch(APIAddress)
 		.then(function(response) {
 			return response.json();
 		})
 		.then((jsonData) => {
-			this.setState({ callData: jsonData });
+			this.setState({ callData: jsonData, clickedValue: clicked });
 		});
-	}
-	componentDidMount(url) {
-		this.callAPI(url);
 	}
 	render() {
 		return (
