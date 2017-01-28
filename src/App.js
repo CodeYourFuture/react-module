@@ -3,15 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import OrganisationList from'./OrganisationComp';
 
-
-
 class App extends Component {
   renderServiceProviders = () => {
     if (!this.state.orgData)
       //return error message if connection is not made
       return <p> Data Not Displayed</p>;
         let organisationList=this.state.orgData.data;
-    //returns the data in Organisationomp
+    //returns the data in OrganisationComp
         return (
           <div>
             <OrganisationList orgData={organisationList}/>
