@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
+import SearchPanel from './SearchPanel';
 import '../App.css';
 
 
 class MainContainer extends React.Component {
   
   state={
-    test: 34,
     pageHeader: 'London NGO Trucking System'
+
   };
   
   /* constructor(props){
@@ -18,12 +19,13 @@ class MainContainer extends React.Component {
     }
   }*/
 
+ 
   render(){
     return (
       <div className="App">
-        <Header message={this.state.pageHeader}/>
-        <Navigation />
-       {this.state.pageHeader}
+       
+        <Navigation />  
+        <SearchPanel />     
       </div>
     );
   }
