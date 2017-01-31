@@ -37,6 +37,7 @@ React
 
 
 - Uses [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
+
 ```jsx
 import React, { Component } from 'react';
 
@@ -52,7 +53,6 @@ class App extends Component {
 }
 
 export default App;
-
 ```
 
 - Many good Patterns: Single Responsibility, DRY, abstraction of state
@@ -62,16 +62,13 @@ export default App;
 Let's create an app!
 ---
 
-```sh
+```bash
 npm install -g create-react-app
 
 create-react-app my-app
 cd my-app/
 npm start
-
 ```
-
-
 
 ES6
 ---
