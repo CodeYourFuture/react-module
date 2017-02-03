@@ -26,11 +26,9 @@ module.exports = {
             "unix"
         ],
         "quotes": [
-            2,
+            "error",
             "single"
         ],
-        'guard-for-in': 2,
-        'brace-style': [2, 1tbs],
         "semi": [
             "error",
             "always"

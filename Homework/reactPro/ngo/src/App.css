@@ -12,7 +12,9 @@ form {
   
   -webkit-box-shadow: inset 0px 1px 1px rgba(255,255,255,1), 0px 10px 15px rgba(0,0,0,.5);
 }
-
+p{
+  float: left;
+}
 .group:before{ 
   content: "\0020"; 
   display:block; 
@@ -58,7 +60,19 @@ ol li input[type="text"]{
   background:#022E32;
     
 }
-
+legend{
+  font: bold 14px "Lucida Grande", Lucida, Verdana, sans-serif;
+  text-shadow: 0 1px 0px #FFF;
+}
+fieldset{
+  display: inline-block;
+  margin-top: 10px;
+  font: bold 14px "Lucida Grande", Lucida, Verdana, sans-serif;
+  text-shadow: 0 1px 0px #FFF;
+  border-bottom: 1px solid rgb(76, 67, 65);
+  width: 550px;
+  -webkit-border-radius: 10px;
+}
 body {
   height: 500px;
   background: #42826C;
