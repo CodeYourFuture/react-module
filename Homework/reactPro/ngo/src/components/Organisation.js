@@ -1,29 +1,43 @@
 
 import React from 'react';
-import OrganisationDetail from './OrganisationDetail';
 
 class Organisation extends React.Component{
-	
+	state={
+		totalSearch: 0
+	}
 	render(){
+		let orgnisationName;
+		let countResult=0;
 		return(
-			<fieldset>
+			<div> <span>Search Result : </span>[{this.state.totalSearch}]
 				{
 					this.props.organisations.map(items =>{
-						return Object.keys(items).map(key => {
-							return <p><span>{key}</span> : {items[key]}</p>;
-						})
-					})					
+						countResult++;
+						return (<fieldset> 
+							{	Object.keys(items).map(key => {
+								if(key==='organisation' || key==='Organisation' )
+									orgnisationName=items[key];
+
+								if(key==='Website' || key==='website')
+									return <p> <span>{key}</span> : <a target='blank' href={items[key]}> {items[key]}</a></p>
+								else
+									return <p><span>{key}</span> : {items[key]}</p>
+										
+								})
+								
+							}
+							<legend>{ orgnisationName }</legend>
+						</fieldset>
+						)
+					})
+
 				}
-			</fieldset>
+				{this.setState( { totalSearch: countResult } )}
+
+			</div>
 		);
 	}
 
 }
 
 export default Organisation;
-
-
-/*
-		if(key==='organisation' || key==='Organisation' )
-							return <legend>{ items[key] }</legend>;
-*/
