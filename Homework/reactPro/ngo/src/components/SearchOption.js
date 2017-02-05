@@ -1,9 +1,7 @@
 import React from 'react';
 
 class SearchOption extends React.Component{
-//({title,type,area,clients,placeHolder})=>{
 	render(){
-
 		return(
 			<li className="group">
 				<label htmlFor="chooseType">Search Service By : </label>
@@ -18,7 +16,7 @@ class SearchOption extends React.Component{
 	}
 	
 	hundelOnchange=(event)=>{
-		return this.props.getService(event.target.value);
+			return this.props.getService(event.target.value);
 	}
 }
 

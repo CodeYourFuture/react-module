@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const listItem=({menuItemName})=>{
 	return(
@@ -14,11 +13,11 @@ listItem.propType={
 const Navigation=()=>{
   return(
     <div className="nav">
-      <ul>
-		<listItem className="listItem">New Organisation</listItem>
-		<listItem className="listItem">Search</listItem>
-		<listItem className="listItem">About Us</listItem>	
-      </ul>
+    	<ul>
+			<listItem className="listItem">New Organisation</listItem>
+			<listItem className="listItem">Search</listItem>
+			<listItem className="listItem">About Us</listItem>	
+      	</ul>
     </div>
     );
 };

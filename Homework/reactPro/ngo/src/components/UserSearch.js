@@ -11,21 +11,18 @@ class UserSearch extends React.Component{
 					{
 						typeData.map((item,index) => {
 							return <option key={index}>{item}</option>
-							}
-						)
+						})
 					}
 				</datalist>
-			</li>);
+			</li>
+			)
 	}
 
 	handleEnterKey=(event)=>{
-
 		if (event.charCode === 13){
 			this.props.getUserInput(event.target.value);
 			event.preventDefault();
 		}
-		
-		
 	};
 }
 

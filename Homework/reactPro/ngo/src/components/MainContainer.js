@@ -9,7 +9,6 @@ import Organisation from './Organisation';
 
 import '../App.css';
 
-
 class MainContainer extends React.Component {
   
   constructor(props){
@@ -41,10 +40,6 @@ class MainContainer extends React.Component {
     );
   }
 
-  componentDidMount=()=>{
-     
-  };
-
   getServiceType=(Type)=>{
     const url='https://code-your-future.github.io/api-demo/' + Type + '/index.json';
     this.setState({ searchType: Type });
@@ -55,12 +50,10 @@ class MainContainer extends React.Component {
   getOrganization=(userInput)=>{
     const url='https://code-your-future.github.io/api-demo/'+ this.state.searchType +'/' + userInput +'/index.json';
     this.getOrganizationDetailAPI(url);   
-    //console.log(this.state.organizationList);  
   };
 
   getOrganizationDetailAPI = (url) => {
-    const APIAddress = url;
-    fetch(APIAddress)
+    fetch(url)
     .then(response => {
       return response.json();
     })
@@ -69,10 +62,8 @@ class MainContainer extends React.Component {
     });
   };
 
-
   getServiceTypeDetailAPI = (url) => {
-    const APIAddress = url;
-    fetch(APIAddress)
+    fetch(url)
     .then(response => {
       return response.json();
     })
@@ -80,7 +71,6 @@ class MainContainer extends React.Component {
       this.setState( { searchTypeResult: jsonData.data} );     
     });
   };
-
 }
 
 export default MainContainer;

@@ -1,10 +1,9 @@
-
 import React from 'react';
 
-const Legend=({title})=>{ 
+const Legend=({title})=>{
 	return(
 		<li className="group">
-			<legend>{title}</legend>
+		<legend>{title}</legend>
 		</li>
 	);
 };
