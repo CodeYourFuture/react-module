@@ -6,7 +6,8 @@ import SearchOption from './SearchOption';
 import Legend from './Legend';
 import UserSearch from './UserSearch';
 import Organisation from './Organisation';
-
+import RegistrationForm from './RegistrationForm';
+import About from './About';
 import '../App.css';
 
 class MainContainer extends React.Component {
@@ -26,15 +27,25 @@ class MainContainer extends React.Component {
       <div className="App">
         <Navigation /> 
         <form name="mainForm" className="group" action="#">
-        <ol>  
-          <Legend title="Advanced Search"/>
-          <SearchOption getService={this.getServiceType} title="Search option" placeHolder="Select..." 
-             type="By service type" area="By service area" clients="By service clients" />
-          <UserSearch searchTypeList={ this.state.searchTypeResult } getUserInput={this.getOrganization}/>
-        </ol>
-        <div id="searchResult" >
-          <Organisation organisations={this.state.organizationList} />
-        </div>
+          {
+            (this.props.location.pathname ==='/') ?
+              <div>
+              <ol>  
+                <Legend title="Advanced Search"/>
+                <SearchOption getService={this.getServiceType} title="Search option" placeHolder="Select..." 
+                  type="By service type" area="By service area" clients="By service clients" />
+                <UserSearch searchTypeList={ this.state.searchTypeResult } getUserInput={this.getOrganization}/>
+              </ol>            
+                <Organisation organisations={this.state.organizationList} />
+              </div> :
+              (this.props.location.pathname === '/about') ?
+                <About />:
+              <RegistrationForm/> 
+                        
+
+          }
+
+        
       </form>   
       </div>
     );
@@ -59,7 +70,9 @@ class MainContainer extends React.Component {
     })
     .then(jsonData => {
       this.setState( { organizationList: jsonData.data } ); 
-    });
+    }).catch(
+      this.setState({ organizationList: [] } )
+    );
   };
 
   getServiceTypeDetailAPI = (url) => {
@@ -69,7 +82,9 @@ class MainContainer extends React.Component {
     })
     .then(jsonData => {
       this.setState( { searchTypeResult: jsonData.data} );     
-    });
+    }).catch(
+      this.setState({ searchTypeResult: [] } )
+    );
   };
 }
 

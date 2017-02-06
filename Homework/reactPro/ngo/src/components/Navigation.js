@@ -1,23 +1,14 @@
 import React from 'react';
-
-const listItem=({menuItemName})=>{
-	return(
-		<li>{menuItemName}</li>
-	);
-};
-
-listItem.propType={
-	menuItemName:React.PropTypes.string
-};
+import { Link } from 'react-router';
 
 const Navigation=()=>{
   return(
     <div className="nav">
     	<ul>
-			<listItem className="listItem">New Organisation</listItem>
-			<listItem className="listItem">Search</listItem>
-			<listItem className="listItem">About Us</listItem>	
-      	</ul>
+				<Link to='/add-organization' activeClassName='selected' className="listItem">New Organisation </Link>
+				<Link to='/' activeClassName='selected' className='listItem'>Search </Link>
+				<Link to='/about' activeClassName='selected' className="listItem">About Us </Link>	
+      </ul>
     </div>
     );
 };

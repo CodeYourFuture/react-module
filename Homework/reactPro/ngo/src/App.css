@@ -27,6 +27,14 @@ form {
 .group { 
   zoom: 1; 
 }
+.s{
+  width: 350px;
+}
+label, input, button {   
+    padding: 0.2em;
+    margin: 0.1em 0.2em;
+    -webkit-box-sizing: content-box;  
+}
 
 select {
   background: #022E32;
