@@ -10,7 +10,7 @@ import OrgDetails from './OrgDetails.js';
 ReactDOM.render(
 	(<Router history={browserHistory}>
     <Route path="/" component={App} />
-    <Route path="/area/:areaName" component={App} />
+    <Route path="/area/:areaName" component={Area} />
     <Route path="/area/:areaName/organisation/:orgName" component={OrgDetails}/>
   </Router>),
   	document.getElementById('root')

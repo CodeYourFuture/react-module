@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import OrganisationList from'./OrganisationComp';
 
 class App extends Component {
-  renderServiceProviders = () => {
-    if (!this.state.orgData){
-      //return error message if connection is not made
-      return <p> Data Not Displayed</p>;
-    }
-    let organisationList=this.state.orgData.data;
-  //returns the data in OrganisationComp
-    return (
-      <div>
-        <OrganisationList orgData={organisationList}/>
-      </div> 
-    );
-  }
-
-  //set intial state of your component
+    //set intial state of your component
   constructor(props) {
     super(props);
     this.state = {
@@ -33,15 +18,16 @@ class App extends Component {
           <h2>Welcome to RAMS</h2>
         </div>
         <div className="App-intro">
-          {this.renderServiceProviders()}
+          /* {this.renderServiceProviders()} */
+          Todo :o)
         </div>
       </div>
     );
   }
 
   callAPI = () => {
-    const APIAddress = 'https://code-your-future.github.io/api-demo/area/All/index.json';
-    fetch(APIAddress)
+    const GetAreaURL = 'https://code-your-future.github.io/api-demo/area/All/index.json';
+    fetch(GetAreaURL)
     .then(function(response) {
       return response.json();
     })
@@ -51,7 +37,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.callAPI();
+    // this.callAPI();
   }
 }
 
