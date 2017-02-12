@@ -20,12 +20,12 @@ class Area extends Component {
     //this.getOrganisationsinArea();
     this.getAreas();
   }
-  renderServiceProviders = () => {
+  renderServiceProviders = (area) => {
       if (!this.state.orgData){
         //return error message if connection is not made
         //return <p>Data Not Displayed</p>;
         console.info('look, there was no data, I am going to make a API Call');
-        this.getOrganisationsinArea();
+        this.getOrganisationsinArea(area);
       }
       let organisationList = this.state.orgData ? this.state.orgData.data : null;
     //returns the data in OrganisationComp
@@ -48,8 +48,8 @@ class Area extends Component {
       this.setState({ areas: jsonData.data });
     });
   }
-  getOrganisationsinArea = () => {
-    const targetArea = this.state.selectedArea;
+  getOrganisationsinArea = (targetArea) => {
+  //  const targetArea = this.state.selectedArea;
    
     const APIAddress = 'https://code-your-future.github.io/api-demo/area/' + targetArea + '/index.json';
     fetch(APIAddress)
@@ -75,7 +75,7 @@ class Area extends Component {
         <div>
           <NavBar navItems={this.state.areas} />
           <h1>{targetArea}</h1>
-    		  {this.renderServiceProviders()}
+    		  {this.renderServiceProviders(routeArea)}
   		  </div>
       );
     }

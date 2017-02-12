@@ -25,16 +25,16 @@ class App extends Component {
     );
   }
 
-  callAPI = () => {
-    const GetAreaURL = 'https://code-your-future.github.io/api-demo/area/All/index.json';
-    fetch(GetAreaURL)
-    .then(function(response) {
-      return response.json();
-    })
-    .then((jsonData)=> {
-      this.setState({ orgData: jsonData });
-    });
-  }
+  // callAPI = () => {
+  //   const GetAreaURL = 'https://code-your-future.github.io/api-demo/area/All/index.json';
+  //   fetch(GetAreaURL)
+  //   .then(function(response) {
+  //     return response.json();
+  //   })
+  //   .then((jsonData)=> {
+  //     this.setState({ orgData: jsonData });
+  //   });
+  // }
 
   componentDidMount() {
     // this.callAPI();

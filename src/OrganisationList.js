@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Details from './Details'
 
-
-
 class OrganisationList extends Component {
   renderOrganisations= () => {
     const orgData=this.props.orgData;
