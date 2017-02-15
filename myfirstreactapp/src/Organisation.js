@@ -17,15 +17,15 @@ export default class Organisation extends Component {
       <div className='test'>
       
     {/*  website:{website}<br/>*/}
-      tel:{tel}<br />
-      area:{area}<br />
-      process:{process}<br />
-      name:{name}<br />
-      clients:{clients}<br />
-      services:{services}<br />
-      borough:{borough}<br />
-      type:{type}<br />
-      day:{day}<br />
+      tel:   {tel}<br /><br />
+      area:  {area}<br /><br />
+      process:  {process}<br /><br />
+      name:  {name}<br /><br />
+      clients: {clients}<br /><br />
+      services: {services}<br /><br />
+      borough: {borough}<br /><br />
+      type:  {type}<br /><br />
+      day:  {day}<br /><br />
       </div>
 
     );

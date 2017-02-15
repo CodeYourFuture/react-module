@@ -5,27 +5,29 @@ import Organisation from './Organisation';
 
 
 class App extends Component {
-  //this is our own function that we can call using this.functionName
-  // changeAddress = () => {
-  //   this.setState({
-  //   address: 'new address'
-  //   })
-  // }
+ 
   // constructor gets called once when the class is initiated
   constructor(props) {
     super(props);
     this.state = {
-    orgData: {data: []}
+    orgData: {data: []},
+    areaData: {data: []}
     };
 
-  {/*   handleChange(event) {
-    this.setState({value: event.target.value});
-  }*/}
+  
   }
+
+   renderAreas = () => {
+    const myData = this.state.areaData.data; 
+     return myData.map((area) =>{
+     return ( <button onClick={() =>this.getOrganizations(area)}>{area}</button>);
+   });
+     
+   }
   renderOrganisations = () => {
     const myData = this.state.orgData.data; 
      return myData.map(function(organisation) {
-      return ( <Organisation
+     return ( <Organisation
      website={organisation.website}
      tel={organisation.tel ? organisation.tel : 'None'}
      area={organisation.area}
@@ -49,14 +51,14 @@ class App extends Component {
         </div>
            <p className="App-intro"></p>
 
+           {this.renderAreas()}
            {this.renderOrganisations()}
-    {  /*    <input type="text" value={this.state.website} onChange={this.handleChange.bind(this)} />*/}
-         <button>Clear</button>
       </div>
    );            
 }
-  callAPI = () => {
-    const APIAddress = 'https://code-your-future.github.io/api-demo/area/North/index.json';
+
+  getOrganizations = (area) => {
+    const APIAddress = 'https://code-your-future.github.io/api-demo/area/'+ area +'/index.json';
     fetch(APIAddress)
     .then(function(response) {
     console.log(response) 
@@ -64,11 +66,24 @@ class App extends Component {
     })
     .then((jsonData) => {
       this.setState({ orgData: jsonData });
-  });
+    });
+ }
+
+  callAreas = () => {
+    const APIAddress = 'https://code-your-future.github.io/api-demo/area/index.json';
+    fetch(APIAddress)
+    .then(function(response) {
+    console.log(response) 
+    return response.json();
+    })
+    .then((jsonData) => {
+      this.setState({ areaData: jsonData });
+    });
 
   }
+
  componentDidMount() {
-    this.callAPI();
+    this.callAreas();
 
     
   }
