@@ -23,7 +23,7 @@ class App extends Component {
           <h2>Welcome to RAMS</h2>
         </div>
         <div className="App-intro">
-        <input type='text' onChange={onChangeNew}></input>
+        <input type='text' onChange={this.onChangeNew}></input>
         <button onClick={this.addOrganisation}> add something </button>
         // {this.renderServiceProviders()} 
         //  Todo :o)
