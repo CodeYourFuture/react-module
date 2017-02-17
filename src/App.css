@@ -35,3 +35,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+h1{
+  text-align: center;
+}
+
+.displayAreas{
+  width: 320px;
+  margin: 10px;
+  float: left;
+  clear: both;
+}

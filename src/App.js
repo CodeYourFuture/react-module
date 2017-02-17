@@ -10,6 +10,11 @@ class App extends Component {
        orgData: null
     }
   }
+  onChangeNewName = (event) => {
+    const value = event.target.value;
+    this.setState({newName:value});
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,26 +23,45 @@ class App extends Component {
           <h2>Welcome to RAMS</h2>
         </div>
         <div className="App-intro">
-          /* {this.renderServiceProviders()} */
-          Todo :o)
+        <input type='text' onChange={onChangeNew}></input>
+        <button onClick={this.addOrganisation}> add something </button>
+        // {this.renderServiceProviders()} 
+        //  Todo :o)
         </div>
       </div>
     );
   }
+  onChangeNew(){
+    console.log('hello');
+  }
 
-  // callAPI = () => {
-  //   const GetAreaURL = 'https://code-your-future.github.io/api-demo/area/All/index.json';
-  //   fetch(GetAreaURL)
-  //   .then(function(response) {
-  //     return response.json();
-  //   })
-  //   .then((jsonData)=> {
-  //     this.setState({ orgData: jsonData });
-  //   });
-  // }
+  addOrganisation = event => {
+    const organisations =this.state.orgData;
+    console.log(this.state.newName);
+    console.log(organisations.data[0]);
+    
+    if(organisations.data.length){
+      organisations.data.push({
+        organisaion: this.state.newName
+       // tel: 123 456
+      });
+      this.setState({orgData: organisations});
+    }
+  }
+
+  callAPI = () => {
+    const GetAreaURL = 'https://code-your-future.github.io/api-demo/area/All/index.json';
+    fetch(GetAreaURL)
+    .then(function(response) {
+      return response.json();
+    })
+    .then((jsonData)=> {
+      this.setState({ orgData: jsonData });
+    });
+  }
 
   componentDidMount() {
-    // this.callAPI();
+    this.callAPI();
   }
 }
 
