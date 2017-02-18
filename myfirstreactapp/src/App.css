@@ -9,13 +9,14 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #5D514E;
   padding: 20px;
   
 }
 
 .App-intro {
   font-size: large;
+  color:gray;
 
 
 }
@@ -28,16 +29,43 @@
   padding-bottom: 0px;
   text-align: center;
   color:black;
-  background-color: yellow;
+  background-color: #8C7E7A ;
   font-size: xx-large;
 }
 .test{
-  position:relative; left: 320px; top:40px;
-  background-color:#325a67;
-  margin: 20px;
+ 
+  background-color:#C8C5C4;
+  margin:5px;
   padding:10px ;
-  border:5px solid black;
+  border:2px solid black;
   border-radius: 40px;
   width: 500px;
-
+  font-size: 20px;
+  position: relative; left:300px; bottom:950px;
+}
+button  {
+  background-color:#9C9897;
+  color:#3E0E04  ;
+  height:50px;
+  width:150px;
+  border-radius: 10px;
+  display: block;
+  font-size: 15px;
+  padding: 
+}
+ .but{
+  position: absolute;
+  left: 400px; top:280px;
+  background-color: #816A51  ;
+  color:black;
+  height:30px; 
+  width:350px;
+}
+input{
+  position: absolute; 
+  left:350px;
+  height:30px ;
+  width:450px;
+  border-radius:10px; 
+  border:2px solid black;
 }

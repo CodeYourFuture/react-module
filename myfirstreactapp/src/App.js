@@ -11,11 +11,10 @@ class App extends Component {
     super(props);
     this.state = {
     orgData: {data: []},
-    areaData: {data: []}
-    };
+    areaData: {data: []},
 
-  
-  }
+    };
+   }
 
    renderAreas = () => {
     const myData = this.state.areaData.data; 
@@ -24,11 +23,13 @@ class App extends Component {
    });
      
    }
+
+  
   renderOrganisations = () => {
     const myData = this.state.orgData.data; 
      return myData.map(function(organisation) {
      return ( <Organisation
-     website={organisation.website}
+    website={organisation.website}
      tel={organisation.tel ? organisation.tel : 'None'}
      area={organisation.area}
      process={organisation.process}
@@ -50,12 +51,32 @@ class App extends Component {
            <p className="App-head">Services In London</p>
         </div>
            <p className="App-intro"></p>
+           <input type='text' onChange={this.onChangeNewName}></input>
+           <button className="but" onClick={this.addOrganisation} >add</button>
+           <br/>
 
            {this.renderAreas()}
            {this.renderOrganisations()}
       </div>
    );            
 }
+  onChangeNewName = (event) => {
+     const value = event.target.value;
+     this.setState({newName: value});
+  }
+  addOrganisation =(event) => {
+    const organisations = this.state.orgData;
+    console.log(this.state.newName);
+    console.log(organisations.data[0])
+    if(organisations.data.length ){
+      organisations.data.push({
+        organisation: this.state.newName,
+        tel: 999
+      });
+
+      this.setState({orgData: organisations});
+    }
+  }
 
   getOrganizations = (area) => {
     const APIAddress = 'https://code-your-future.github.io/api-demo/area/'+ area +'/index.json';
